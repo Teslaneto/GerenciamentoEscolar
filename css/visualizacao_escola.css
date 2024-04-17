@@ -1,0 +1,28 @@
+
+.lista-escolas {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+
+.lista-escolas li {
+    background-color: #f9f9f9; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+
+.lista-escolas li a {
+    margin-left: 10px; 
+    color: #007BFF;
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+
+.lista-escolas li a:hover {
+    text-decoration: underline; 
+}

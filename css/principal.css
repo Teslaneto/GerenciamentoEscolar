@@ -1,0 +1,77 @@
+.nav {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-weight: bold;
+    background-color:white;
+}
+
+
+.nav li {
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav li a {
+    display: block; 
+    padding: 14px 20px; 
+    color: black; 
+    text-decoration: none; 
+    transition: background-color 0.3s; /
+}
+ 
+  .nav li a:hover {
+    background-color: #FF7B02; 
+}
+
+
+.nav li a.active {
+    background-color: #4CAF50; 
+}
+ .img1{
+    width: 160px;
+    height: 60px;
+}
+.back-ground{
+    width: 100%;
+    background-color: #0191D0;
+}
+.banner{
+    width:800px;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.center{
+    margin-top: 10%;
+    margin: 0 auto;
+    display: flex;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    flex-direction: row;
+    justify-content: center;
+}
+.info-section {
+    margin-top: 7%;
+    padding: 20px;
+    background-color: #f3f3f3; /
+}
+.fontes{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 15px; 
+    font-weight: bold; 
+}
+/* Rodapé */
+footer {
+    padding: 10px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
