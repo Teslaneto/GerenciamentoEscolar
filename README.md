@@ -1,7 +1,4 @@
-
-Claro! Aqui está uma versão mais bonita do seu README com emojis e imagens:
-
-🚀 Guia de Instalação do Projeto
+#🚀 Guia de Instalação do Projeto
 🛠️ Como Instalar o Projeto
 1. Instalar PHP
 🔗 Visite o site oficial do PHP para baixar a versão 8.
