@@ -11,8 +11,8 @@
 ### 🗂️ Faça o download do projeto do repositório Git:
 bash
 Copiar código
-git clone https://seu-repositorio.git
-🖥️ Se você não tiver o Visual Studio Code instalado, baixe-o aqui.
+### git clone https://repositorio.git
+🖥️ Se você não tiver o Visual Studio Code instalado, baixe-o.
 
 ## 4. Verificar as Conexões com os Bancos de Dados
 ### 📄 Certifique-se de que o arquivo de configuração que contém as credenciais para o banco de dados (conexao.php ou similar) está configurado corretamente.
