@@ -19,7 +19,7 @@
         <div>
             <div class="center">
                 <div class="back-ground">
-                <img class="banner" src="/projetoMinhaescola/img/matrículas.png" alt="">
+                <img class="banner" src="/Projeto-de-Gerenciamento-Escolar/img/matrículas.png" alt="">
                 </div>
             </div>
         </div>

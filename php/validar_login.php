@@ -16,14 +16,14 @@ if(isset($_POST['login'])) {
     if ($result->num_rows > 0) {
         echo "O login '$login' existe no banco de dados.";
         $_SESSION['autenticar'] = 'SIM';
-        header("Location: /projetoMinhaescola/principal.php");
+        header("Location: /Projeto-de-Gerenciamento-Escolar/principal.php");
     } else {
         $_SESSION['autenticar'] = 'NAO';
-        header("Location: /projetoMinhaescola/index.php");  
+        header("Location: /Projeto-de-Gerenciamento-Escolar/index.php");  
     }
 } else {
     echo "O login não foi enviado.";
     $_SESSION['autenticar'] = 'NAO';
-    header("Location: /projetoMinhaescola/index.php");
+    header("Location: /Projeto-de-Gerenciamento-Escolar/index.php");
 }
 ?>
