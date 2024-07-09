@@ -23,7 +23,7 @@ include 'professores/conexao_professores.php';
      </div>
     <div class="space"></div>
     <!-- Formulário para adicionar ou editar turmas -->
-    <form method="post" action="/projetoMinhaescola/turmas/banco_turmas.php">
+    <form method="post" action="/Projeto-de-Gerenciamento-Escolar/turmas/banco_turmas.php">
         <input type="hidden" name="id" value="<?php echo isset($_GET['id']) ? $_GET['id'] : ''; ?>">
         
         <label for="id_escola">ID da Escola:</label>
@@ -48,7 +48,7 @@ include 'professores/conexao_professores.php';
         <input type="submit" name="salvar" value="Salvar">
 
     <!-- Link para visualizar turmas existentes -->
-    <a href="/projetoMinhaescola/turmas/visualizar_turmas.php">Visualizar Turmas</a>
+    <a href="/Projeto-de-Gerenciamento-Escolar/turmas/visualizar_turmas.php">Visualizar Turmas</a>
     </form>
 </body>
 </html>
