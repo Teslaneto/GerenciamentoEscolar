@@ -85,4 +85,19 @@ if (isset($_GET['id'])) {
     $status = $escola['status'];
 }
 
+function getresgatar_todasEscola($mysqli) {
+    $query_select = "SELECT nome FROM tb_escola";
+    $query = $mysqli->prepare($query_select);
+    $query->execute();
+    $result = $query->get_result();
+
+    $nomesEscolar = array();
+    while ($row = $result->fetch_assoc()) {
+        $nomesEscolar[] = $row['nome'];
+    }
+    
+    $query->close();
+    return  $nomesEscolar;
+}
+
 ?>

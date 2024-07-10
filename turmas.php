@@ -1,5 +1,10 @@
 <?php
 include 'professores/conexao_professores.php';
+include('php/funcoes.php');
+require_once('php/conexao_escolas.php');
+
+$nomesEscolar = getresgatar_todasEscola($mysqli);
+$mysqli->close();
 
 ?>
 
@@ -26,8 +31,8 @@ include 'professores/conexao_professores.php';
     <form method="post" action="/Projeto-de-Gerenciamento-Escolar/turmas/banco_turmas.php">
         <input type="hidden" name="id" value="<?php echo isset($_GET['id']) ? $_GET['id'] : ''; ?>">
         
-        <label for="id_escola">ID da Escola:</label>
-        <input type="number" name="id_escola" id="id_escola" value="<?php echo isset($_GET['id']) ? buscar_turma($_GET['id'], $mysqli)['id_escola'] : ''; ?>" required>
+        <label for="id_escola">id escolar:</label>
+        <select name="id_escoal" id="id_escola"></select>
         
         <label for="status">Status:</label>
         <select name="status" id="status" required>
