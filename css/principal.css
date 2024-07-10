@@ -58,11 +58,6 @@
     flex-direction: row;
     justify-content: center;
 }
-.info-section {
-    margin-top: 7%;
-    padding: 20px;
-    background-color: #f3f3f3; /
-}
 .fontes{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     font-size: 15px; 

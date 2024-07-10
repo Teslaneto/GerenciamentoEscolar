@@ -58,13 +58,7 @@ $mysqli->close();
     </div>
 
 
-    <div class="info-section">
-        <h2 class="center">Informações</h2>
-        <p class="center">Aqui estão algumas informações sobre o nosso site e os serviços que oferecemos.</p>
-        <p class="center">Você pode adicionar mais conteúdo e seções aqui.</p>
-    </div>
-
-    <footer>
+    <footer style="margin-top: 10%;">
         <p class="fontes">© 2024 Nosso Site. Todos os direitos reservados.</p>
     </footer>
 </body>
