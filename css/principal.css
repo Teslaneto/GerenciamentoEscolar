@@ -68,6 +68,17 @@
     font-size: 15px; 
     font-weight: bold; 
 }
+.escolar-contar{
+    border:1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.text-contar{
+    margin-top: 150px;
+    margin-left: 50px;
+}
 /* Rodapé */
 footer {
     padding: 10px;
@@ -75,3 +86,4 @@ footer {
     color: rgb(0, 0, 0);
     text-align: center;
 }
+
