@@ -20,6 +20,26 @@ function getcontar_escolar($mysqli) {
     $query->close();
 }
 
+function getcontar_totalTurmas($mysqli){
+    $query_select = "SELECT id FROM tb_turmas";
+    $query = $mysqli->prepare($query_select);
+    $query->execute();
+
+    $result = $query->get_result();
+
+    if($result->num_rows > 0){
+        $ids = array();
+        while($row = $result->fetch_assoc()){
+            $ids[] = $row['id'];
+        }
+        $total = count($ids);
+        return array('ids' => $ids, 'total' => $total);
+    }
+    else{
+        return array('ids' => array(), 'total' => 0);
+    }
+}
+
 function buscar_escola($id, $mysqli) {
     $query = "SELECT * FROM tb_escola WHERE id = ?";
     //prepare() no objeto $mysqli para preparar a consulta SQL ($query).
