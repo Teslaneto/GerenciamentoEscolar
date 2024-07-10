@@ -80,6 +80,8 @@
 
 }
 .text-contar{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold; 
     margin-top: 50px;
     margin-left: 50px;
 }
