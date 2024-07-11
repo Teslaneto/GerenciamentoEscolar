@@ -71,6 +71,7 @@ $mysqli->close();
         ?>
     </div>
 
+    
     <footer style="margin-top: 10%;">
         <p class="fontes">© 2024 Nosso Site. Todos os direitos reservados.</p>
     </footer>
