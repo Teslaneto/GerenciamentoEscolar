@@ -1,6 +1,6 @@
 <?php
 
-function getcontar_escolar($mysqli) {
+    function getcontar_escolar($mysqli) {
     $query_select = "SELECT id FROM tb_escola";
     $query = $mysqli->prepare($query_select);
     $query->execute();
@@ -18,9 +18,9 @@ function getcontar_escolar($mysqli) {
     }
 
     $query->close();
-}
+    }
 
-function getcontar_totalTurmas($mysqli){
+    function getcontar_totalTurmas($mysqli){
     $query_select = "SELECT id FROM tb_turmas";
     $query = $mysqli->prepare($query_select);
     $query->execute();
@@ -38,9 +38,9 @@ function getcontar_totalTurmas($mysqli){
     else{
         return array('ids' => array(), 'total' => 0);
     }
-}
+    }
 
-function getcontar_professores($mysqli){
+    function getcontar_professores($mysqli){
     $query_select = "SELECT id FROM tb_professores";
     $query = $mysqli->prepare($query_select);
     $query->execute();
@@ -57,9 +57,9 @@ function getcontar_professores($mysqli){
     }else{
         return array('ids' => array(), 'total' => 0);
     }
-}
+    }
 
-function buscar_escola($id, $mysqli) {
+    function buscar_escola($id, $mysqli) {
     $query = "SELECT * FROM tb_escola WHERE id = ?";
     //prepare() no objeto $mysqli para preparar a consulta SQL ($query).
     $stmt = $mysqli->prepare($query);
@@ -71,10 +71,10 @@ function buscar_escola($id, $mysqli) {
     $escola = $result->fetch_assoc();
     $stmt->close();
     return $escola;
-}
-if (isset($_GET['id'])) {
+    }
+    if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    
+
     // Chama a função buscar_escola para obter os dados da escola
     $escola = buscar_escola($id, $mysqli);
 
@@ -83,9 +83,9 @@ if (isset($_GET['id'])) {
     $endereco = $escola['endereco'];
     $inep = $escola['inep'];
     $status = $escola['status'];
-}
+    }
 
-function getresgatar_todasEscola($mysqli) {
+    function getresgatar_todasEscola($mysqli) {
     $query_select = "SELECT nome FROM tb_escola";
     $query = $mysqli->prepare($query_select);
     $query->execute();
@@ -95,9 +95,11 @@ function getresgatar_todasEscola($mysqli) {
     while ($row = $result->fetch_assoc()) {
         $nomesEscolar[] = $row['nome'];
     }
-    
+
     $query->close();
     return  $nomesEscolar;
-}
+    }
+
+    
 
 ?>
