@@ -23,7 +23,7 @@ $mysqli->close();
             <li><a href="turmas.php">Turmas</a></li>
             <li><a href="escolas.php">Escolas</a></li>
             <li><a href="professores.php">Professores</a></li>
-            <li><a href="professores.php">Alunos</a></li>
+            <li><a href="alunos.php">Alunos</a></li>
             <li><a href="logoff.php">Sair</a></li>
         </ul>
      </div>
