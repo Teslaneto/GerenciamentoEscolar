@@ -28,6 +28,7 @@ while ($escola = $result->fetch_assoc()) {
     echo " | Endereço: " . $escola['endereco'];
     echo " | INEP: " . $escola['inep'];
     echo " | Status: " . $escola['status'];
+    echo " | Idescola: " . $escola['id'];
     echo " | <a href=\"editar.php?id=" . $escola['id'] . "\">Editar</a>";
     echo " | <a href=\"remover.php?id=" . $escola['id'] . "\" onclick=\"return confirm('Você tem certeza que deseja remover esta escola?')\">Remover</a>";
     echo "</li>";
