@@ -18,6 +18,7 @@ $mysqli->close();
 <head>
     <title>Geraldo</title>
     <link rel="stylesheet" type="text/css" href="css/principal.css">
+    <link rel="stylesheet" type="text/css" href="css/form_escola.css">
 </head>
 <body>
     <div>
@@ -31,21 +32,23 @@ $mysqli->close();
             <li><a href="logoff.php">Sair</a></li>
         </ul>
     </div>
+    <div class="form-container">
+        <h1 class="form-header">Adicionar de Alunos</h1>
+        <form method="POST" action="alunos/adicionar_alunos.php">
 
-    <form method="POST" action="alunos/adicionar_alunos.php">
+            <label for="nome" class="form-label">Aluno Nome:</label>
+            <input type="text" name="nome" value="" class="form-input" placeholder="Digite o nome do Aluno." style="margin-left:-10px;">
+            
+            <label for="id_escola" class="form-label">Escolas :</label>
+            <input type="text" name="escola" value="" class="form-input" placeholder="Digite o Id Escolar"  style="margin-left:-10px;"> 
+            
+            <input type="submit"value="Enviar" class="form-submit" >
+        </form>
 
-        <label for="nome">Aluno Nome:</label>
-        <br>
-        <input type="text" name="nome" value="" placeholder="Digite o nome do Aluno.">
-        
-        <br>
-        <label for="id_escola">Escolas :</label>
-        <br>
-        <input type="text" name="escola" value="" placeholder="Digite o Id Escolar"> 
-        
-        <input type="submit"value="Enviar" >
-    </form>
+        <!-- Link para visualizar Alunos existentes -->
+        <a href="alunos/visualizar.php" class="form-link">Visualizar Alunos</a>
 
+    </div>
     <p style="margin-top: 50%;">
     <footer style="margin-top: 10%;">
         <p class="fontes">© 2024 Nosso Site. Todos os direitos reservados.</p>
