@@ -23,3 +23,6 @@ Copiar código
 
 ## TELA INICIAL
 <img src="/print-tela/1.png">
+
+## TELA PRINCIPAL
+<img src="/print-tela/2.png">
