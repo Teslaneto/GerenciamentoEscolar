@@ -14,6 +14,7 @@
                 <li><a href="turmas.php">Turmas</a></li>
                 <li><a href="escolas.php">Escolas</a></li>
                 <li><a href="#ng">Professores</a></li>
+                <li><a href="professores.php">Alunos</a></li>
                 <li><a href="logoff.php">Sair</a></li>
             </ul>
         </div>
