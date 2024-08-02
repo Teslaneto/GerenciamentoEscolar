@@ -19,5 +19,4 @@ if(!empty($login) != "" && !empty($senha) != ""){
     }
 }
 
-
 ?>

@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/style_tela.css">
+        <link rel="stylesheet" type="text/css" href="css/style_tela1.css">
     <title>Meu Php</title>
     </head>
     <body> 
