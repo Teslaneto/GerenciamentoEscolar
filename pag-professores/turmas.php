@@ -1,4 +1,14 @@
 <?php
+include("conexao.php");
+session_start();
+
+if (!isset($_SESSION['professor_id'])) {
+    // Redirecionar para a página de login se o professor não estiver logado
+    header("Location: /Projeto-de-Gerenciamento-Escolar/acessoprofe.php");
+    exit();
+}
+
+$professor_id = $_SESSION['professor_id'];
 ?>
 
 <!DOCTYPE html>
@@ -6,7 +16,7 @@
 <head>
     <title>Geraldo</title>
     <link rel="stylesheet" type="text/css" href="css/principal.css">
-    <link rel="stylesheet" type="text/css" href="css/exibir_janela.css">
+    <link rel="stylesheet" type="text/css" href="css/exibir_janela1.css">
 </head>
 <body>
     <div>
@@ -15,45 +25,79 @@
             <li><a href="inicio.php">Home</a></li>
             <li><a href="turmas.php">Turmas</a></li>
             <li><a href="escolas.php">Escolas</a></li>
-            <li><a href="professores.php">Professores</a></li>
-            <li><a href="alunos.php">Alunos</a></li>
+            <li><a href="professores.php">Notas</a></li>
             <li><a href="logoff.php">Sair</a></li>
         </ul>
     </div>
     
     <h1 class="text">Turmas:</h1>
 
-    <div class="overlay" id="overlay"></div>
-        <div class="janela" id="janela">
-            <h2>Minha Janela</h2>
-            <p>Conteúdo da janela aqui.</p>
-            <button id="fecharJanela">Fechar</button>
-        </div>
+<?php
+    // BUSCAR TURMAS, ALUNOS E ESCOLA BASEADO NO PROFESSOR LOGADO
+    $query = "SELECT 
+                tb_turmas.id AS turma_id, 
+                tb_turmas.nome AS turma, 
+                tb_escola.nome AS escola, 
+                tb_professores.nome AS professor, 
+                tb_alunos.nome AS aluno
+            FROM 
+                tb_turmas 
+            INNER JOIN 
+                tb_escola ON tb_turmas.id_escola = tb_escola.id
+            INNER JOIN 
+                tb_professores ON tb_turmas.id_professor = tb_professores.id
+            INNER JOIN 
+                tb_turma_alunos ON tb_turmas.id = tb_turma_alunos.id_turma
+            INNER JOIN 
+                tb_alunos ON tb_turma_alunos.id_aluno = tb_alunos.id
+            WHERE 
+                tb_professores.id = $professor_id
+            ORDER BY 
+                tb_turmas.id, tb_alunos.nome";
 
-    <button class="botao" id="abrirJanela">Abrir Janela</button>
+    $resul = $mysqli->query($query);
 
-    <script>
-        // JavaScript para abrir e fechar a janela
-        document.getElementById('abrirJanela').addEventListener('click', function() {
-            document.getElementById('janela').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-        });
+    // Verificação da consulta
+    if (!$resul) {
+        die("Erro na consulta: " . $mysqli->error);
+    }
 
-        document.getElementById('fecharJanela').addEventListener('click', function() {
-            document.getElementById('janela').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        });
+    $turmas = [];
 
-        document.getElementById('overlay').addEventListener('click', function() {
-            document.getElementById('janela').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        });
-    </script>
+    if ($resul->num_rows > 0) {
+        while ($row = $resul->fetch_assoc()) {
+            $turma_id = $row['turma_id'];
+            if (!isset($turmas[$turma_id])) {
+                $turmas[$turma_id] = [
+                    'turma' => $row['turma'],
+                    'escola' => $row['escola'],
+                    'professor' => $row['professor'],
+                    'alunos' => []
+                ];
+            }
+            $turmas[$turma_id]['alunos'][] = $row['aluno'];
+        }
+    } else {
+        echo "<p>Nenhuma turma encontrada.</p>";
+    }
 
-    
-    
+    foreach ($turmas as $turma_id => $turma_info) {
+?>
+    <div class="bloco-turma">
+        <h2><?php echo $turma_info['turma']; ?></h2>
+        <p>Escola: <?php echo $turma_info['escola']; ?></p>
+        <p>Professor: <?php echo $turma_info['professor']; ?></p>
+        <p>Alunos:</p>
+        <ul>
+            <?php foreach ($turma_info['alunos'] as $aluno) { ?>
+                <li><?php echo $aluno; ?></li>
+            <?php } ?>
+        </ul>
+    </div>
+<?php
+    }
+?>
 
-    
     <footer style="margin-top: 10%;">
         <p class="fontes">© 2024 Nosso Site. Todos os direitos reservados.</p>
     </footer>

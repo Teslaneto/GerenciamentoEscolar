@@ -12,7 +12,6 @@ if ($mysqli-> connect_errno){
     echo "falha ao conectar com o servidor:( " . $mysqli-> connect_errno.")". $mysqli-> connect_errno;
 }else{
     //CASO NÃO HAJA ERRO DE CONEXÃO
-    echo "Conectado ao banco de dados";
 }
 
 ?>

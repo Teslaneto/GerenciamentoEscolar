@@ -1,0 +1,38 @@
+.bloco-turma {
+    margin: 0 auto;
+    margin-top: 5%;
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
+    width: 500px; 
+}
+
+.bloco-turma h2 {
+    margin-bottom: 20px; 
+    text-align: center; 
+    color: #333; 
+}
+
+.bloco-turma p {
+    color: #333; 
+    margin-bottom: 5px; 
+}
+
+.bloco-turma ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bloco-turma ul li {
+    background-color: #e9e9e9;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 4px; 
+    text-align: left;
+}
+.text{
+    margin: 0 auto;
+    margin-left: 31.7%;
+
+}
