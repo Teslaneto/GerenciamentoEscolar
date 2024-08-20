@@ -1,0 +1,42 @@
+.text{
+    margin: 0 auto;
+    margin-top: 5%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+}
+.quadro{
+    margin: 0 auto;
+    margin-top: 5%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+}
+.botao {
+    display: inline-block;
+    background-color: #ffffff; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    text-align: center; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: background-color 0.3s ease; 
+}
+
+.botao:hover {
+    background-color:  #FF7B02; /* Azul mais escuro ao passar o mouse */
+}
+
+.botao:active {
+    background-color:  #FF7B02; /* Azul ainda mais escuro ao clicar */
+}
+
+.botao:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Sombra ao focar */
+}
