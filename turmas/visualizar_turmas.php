@@ -73,7 +73,6 @@ $turmas = listar_turmas($mysqli);
                 <li>
                     <strong>Nome:</strong> <?php echo htmlspecialchars($turma['nome']); ?><br>
                     <strong>ID da Escola:</strong> <?php echo htmlspecialchars($turma['id_escola']); ?><br>
-                    <strong>Status:</strong> <?php echo htmlspecialchars($turma['status']); ?><br>
                     <strong>Turno:</strong> <?php echo htmlspecialchars($turma['turno']); ?><br>
                     <div class="form-actions">
                         <a href="editar.php?id=<?php echo htmlspecialchars($turma['id']); ?>">Editar</a>
