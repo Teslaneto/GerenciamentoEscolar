@@ -11,10 +11,11 @@
     <div>
         <ul class="nav">
             <img class="img1" src="/Projeto-de-Gerenciamento-Escolar/img/Minha_Escola.png" alt="logo">
-            <li><a href="#">Home</a></li>
+            <li><a href="inicio.php">Home</a></li>
             <li><a href="turmas.php">Turmas</a></li>
             <li><a href="escolas.php">Escolas</a></li>
             <li><a href="professores.php">Notas</a></li>
+            <li><a href="faltas.php">Diario</a></li>
             <li><a href="logoff.php">Sair</a></li>
         </ul>
     </div>

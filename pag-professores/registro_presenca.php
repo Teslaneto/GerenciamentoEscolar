@@ -15,8 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $presencas = $_POST['presenca'];
 
     foreach ($presencas as $id_aluno => $presente) {
-        $stmt = $mysqli->prepare("INSERT INTO tb_presencas (id_aluno, id_turma, data, presente) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("iisi", $id_aluno, $id_turma, $data, $presente);
+        // Preparar a consulta SQL para inserir as presenças
+        $stmt = $mysqli->prepare("INSERT INTO tb_presencas (idaluno, idturma, data, presenca, idprofessor) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("iissi", $id_aluno, $id_turma, $data, $presente, $professor_id);
         $stmt->execute();
     }
     
@@ -37,63 +38,63 @@ $turmas = $result->fetch_all(MYSQLI_ASSOC);
     <title>Registro de Presença</title>
     <style>
         .form-container {
-    margin: 0 auto;
-    margin-top: 5%;
-    background-color: #fff; 
-    padding: 20px; 
-    border-radius: 8px; 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
-    width: 400px; 
-}
+            margin: 0 auto;
+            margin-top: 5%;
+            background-color: #fff; 
+            padding: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
+            width: 400px; 
+        }
 
-.form-header {
-    margin-bottom: 20px; 
-    text-align: center; 
-    color: #333; 
-}
+        .form-header {
+            margin-bottom: 20px; 
+            text-align: center; 
+            color: #333; 
+        }
 
-.form-label {
-    display: block; 
-    margin-bottom: 5px; 
-    color: #333; 
-}
+        .form-label {
+            display: block; 
+            margin-bottom: 5px; 
+            color: #333; 
+        }
 
-.form-input {
-    width: 100%; 
-    padding: 8px; 
-    margin-bottom: 15px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-}
+        .form-input {
+            width: 100%; 
+            padding: 8px; 
+            margin-bottom: 15px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+        }
 
-.form-submit {
-    background-color: #FF7B02; 
-    color: white; 
-    padding: 10px; 
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    width: 100%; 
-}
+        .form-submit {
+            background-color: #FF7B02; 
+            color: white; 
+            padding: 10px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            width: 100%; 
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
 
-table, th, td {
-    border: 1px solid #ccc;
-}
+        table, th, td {
+            border: 1px solid #ccc;
+        }
 
-th, td {
-    padding: 8px;
-    text-align: left;
-}
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
 
-th {
-    background-color: #f2f2f2;
-}
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -117,7 +118,7 @@ th {
             // Buscar alunos da turma selecionada
             if (isset($_POST['id_turma'])) {
                 $id_turma = $_POST['id_turma'];
-                $query = "SELECT id, nome FROM tb_alunos WHERE id IN (SELECT id_aluno FROM tb_turma_alunos WHERE id_turma = ?)";
+                $query = "SELECT a.id, a.nome FROM tb_alunos a JOIN tb_turma_alunos ta ON a.id = ta.id_aluno WHERE ta.id_turma = ?";
                 $stmt = $mysqli->prepare($query);
                 $stmt->bind_param("i", $id_turma);
                 $stmt->execute();
@@ -127,7 +128,7 @@ th {
                 foreach ($alunos as $aluno) {
                     echo "<tr>";
                     echo "<td>{$aluno['nome']}</td>";
-                    echo "<td><input type='checkbox' name='presenca[{$aluno['id']}]' value='1'></td>";
+                    echo "<td><input type='checkbox' name='presenca[{$aluno['id']}]' value='P'></td>";
                     echo "</tr>";
                 }
             }

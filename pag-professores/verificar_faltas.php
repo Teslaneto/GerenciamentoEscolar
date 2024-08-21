@@ -9,6 +9,7 @@ if (!isset($_SESSION['professor_id'])) {
 
 $professor_id = $_SESSION['professor_id'];
 
+// Consulta para obter os alunos que excederam o limite de faltas
 $query = "
     SELECT 
         tb_alunos.nome AS aluno, 
@@ -18,15 +19,15 @@ $query = "
     FROM 
         tb_presencas 
     INNER JOIN 
-        tb_alunos ON tb_presencas.id_aluno = tb_alunos.id
+        tb_alunos ON tb_presencas.idaluno = tb_alunos.id
     INNER JOIN 
-        tb_turmas ON tb_presencas.id_turma = tb_turmas.id
+        tb_turmas ON tb_presencas.idturma = tb_turmas.id
     WHERE 
-        tb_presencas.presente = 0
+        tb_presencas.presenca = 'A'
     GROUP BY 
         tb_alunos.id, tb_turmas.id
     HAVING 
-        faltas > tb_turmas.limite_faltas";
+        COUNT(tb_presencas.id) > tb_turmas.limite_faltas";
 
 $result = $mysqli->query($query);
 
