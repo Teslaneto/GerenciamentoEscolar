@@ -2,7 +2,7 @@
 # 🛠️ Como Instalar o Projeto
 
 ## 1. Instalar PHP
-### 🔗 Visite o site oficial do PHP para baixar a versão 8.
+### 🔗 Visite o site oficial do PHP para baixar a versão 8.0.
 
 ## 2. Instalar MySQL
 ### 🔗 Baixe e instale o MariaDB versão 10.4.32-MariaDB.
