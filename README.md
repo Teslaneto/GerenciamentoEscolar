@@ -1,4 +1,4 @@
-# 🚀 Guia de Instalação do Projeto
+# 🚀 Guia de Instalação do Projeto 🚀 
 # 🛠️ Como Instalar o Projeto
 
 ## 1. Instalar PHP
