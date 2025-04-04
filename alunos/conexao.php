@@ -5,7 +5,7 @@
 $hostname = "localhost";
 $bancodedados = "db_sistema_escola";
 $usuario = "root";
-$senha = "";
+$senha = "root";
 
 $mysqli = new mysqli ($hostname, $usuario, $senha, $bancodedados);
 

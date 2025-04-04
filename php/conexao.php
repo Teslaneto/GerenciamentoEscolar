@@ -12,7 +12,7 @@ $bancodedados = "db_sistema_escola";
 $usuario = "root";
 
 //A SENHA POR PADRÃO SEMPRE É VAZIA
-$senha = "";
+$senha = "root";
 
 //CRIA UM NOVO OBJETO MYSQLI QUE ESTABELECER CONEXÃO COM O BANCO DE DADOS
 $mysqli = new mysqli ($hostname, $usuario, $senha, $bancodedados);
