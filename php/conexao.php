@@ -6,7 +6,7 @@
 $hostname = "localhost";
 
 //BANCO DE DADOS AO QUAL NOS CONECTAMOS
-$bancodedados = "db_admin";
+$bancodedados = "db_sistema_escola";
 
 //NOME PADRÃO DO USUÁRIO, ADMISTRATIVO
 $usuario = "root";

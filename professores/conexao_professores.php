@@ -2,7 +2,7 @@
 //FUNCIONA DA MESMA MANEIRA DA CONEXÃO QUE ESTAR LOCALIZADA NA PASTA -> php/conexao.php
 
 $hostname = "localhost";
-$bancodedados = "db_minhaescola";
+$bancodedados = "db_sistema_escola";
 $usuario = "root";
 $senha = "";
 

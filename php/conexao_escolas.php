@@ -3,7 +3,7 @@
 //AQUI FAZ A CONEÃO COM O BANCO DE DADOS CERTO
 
 $hostname = "localhost";
-$bancodedados = "db_minhaescola";
+$bancodedados = "db_sistema_escola";
 $usuario = "root";
 $senha = "";
 

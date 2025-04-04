@@ -1,7 +1,7 @@
 <?php
 
 $hostname = "localhost";
-$bancodedados = "db_minhaescola";
+$bancodedados = "db_sistema_escola";
 $usuario = "root";
 $senha = "";
 
