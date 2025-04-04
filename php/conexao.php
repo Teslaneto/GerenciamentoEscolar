@@ -3,7 +3,7 @@
 //LOGIN: admin SENHA: admin
 
 //ENDEREÇO DO SERVIDO NESSE CASO É O DA MAQUINA
-$hostname = "localhost";
+$hostname = "localhost:5000";
 
 //BANCO DE DADOS AO QUAL NOS CONECTAMOS
 $bancodedados = "db_sistema_escola";

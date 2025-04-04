@@ -1,7 +1,7 @@
 <?php
 //FUNCIONA DA MESMA MANEIRA DA CONEXÃO QUE ESTAR LOCALIZADA NA PASTA -> php/conexao.php
 
-$hostname = "localhost";
+$hostname = "localhost:5000";
 $bancodedados = "db_sistema_escola";
 $usuario = "root";
 $senha = "root";
